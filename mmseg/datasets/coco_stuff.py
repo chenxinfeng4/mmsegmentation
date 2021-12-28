@@ -91,3 +91,14 @@ class COCOStuffDataset(CustomDataset):
     def __init__(self, **kwargs):
         super(COCOStuffDataset, self).__init__(
             img_suffix='.jpg', seg_map_suffix='_labelTrainIds.png', **kwargs)
+
+@DATASETS.register_module()
+class COCOStuffDatasetRat(CustomDataset):
+    CLASSES = ('background', 'rat_black', 'rat_white')
+
+    PALETTE = [[0, 192, 64], [64, 128, 160], [128, 160, 0]]
+               
+
+    def __init__(self, **kwargs):
+        super(COCOStuffDatasetRat, self).__init__(
+            img_suffix='.jpg', seg_map_suffix='_labelTrainIds.png', **kwargs)

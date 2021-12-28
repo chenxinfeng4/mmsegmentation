@@ -111,11 +111,17 @@ def voc_palette():
             [192, 0, 128], [64, 128, 128], [192, 128, 128], [0, 64, 0],
             [128, 64, 0], [0, 192, 0], [128, 192, 0], [0, 64, 128]]
 
+def rat_palette():
+    """Rat palette for custom dataset."""
+    from mmseg.datasets import COCOStuffDatasetRat
+    return COCOStuffDatasetRat.PALETTE
+
 
 dataset_aliases = {
     'cityscapes': ['cityscapes'],
     'ade': ['ade', 'ade20k'],
-    'voc': ['voc', 'pascal_voc', 'voc12', 'voc12aug']
+    'voc': ['voc', 'pascal_voc', 'voc12', 'voc12aug'],
+    'rat': ['rat']
 }
 
 
